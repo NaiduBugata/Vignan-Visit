@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { MousePointer2, MapPin, Square, Trash2, Plus, Save, X } from 'lucide-react';
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -361,71 +362,82 @@ function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      <div className="dashboard-header">
-        <h1>🗺️ Admin Dashboard</h1>
-        <div className="header-actions">
-          <span className="user-info">👤 {user}</span>
-          <button onClick={handleLogout} className="logout-btn">Logout</button>
-        </div>
-      </div>
-
-      <div className="dashboard-content">
-        {/* Map Editor Section */}
-        <div className="map-editor-section">
-          <h2>Map Editor</h2>
-          
-          <div className="editor-controls">
-            <button 
-              className={`mode-btn ${mode === 'view' ? 'active' : ''}`}
-              onClick={() => setMode('view')}
-            >
-              👁️ View
-            </button>
-            <button 
-              className={`mode-btn ${mode === 'click' ? 'active' : ''}`}
-              onClick={() => setMode('click')}
-            >
-              👆 Click Point
-            </button>
-            <button 
-              className={`mode-btn ${mode === 'draw' ? 'active' : ''}`}
-              onClick={() => setMode('draw')}
-            >
-              ✏️ Draw Rectangle
-            </button>
-            <button onClick={clearCanvas} className="clear-btn">
-              🗑️ Clear
-            </button>
-          </div>
-
-          <div className="mode-indicator">
-            {mode === 'view' && '👁️ View Mode - Just viewing the map'}
-            {mode === 'click' && '👆 Click Mode - Click anywhere to get coordinates'}
-            {mode === 'draw' && '✏️ Draw Mode - Click and drag to draw a rectangle'}
-          </div>
-
-          <div className="canvas-wrapper">
-            <img 
-              id="map-img"
-              src="/public/map.jpeg" 
-              alt="Campus Map"
-              onLoad={handleImageLoad}
-              style={{ display: 'none' }}
-            />
-            <canvas
-              ref={canvasRef}
-              onMouseDown={handleCanvasMouseDown}
-              onMouseMove={handleCanvasMouseMove}
-              onMouseUp={handleCanvasMouseUp}
-              onClick={handleCanvasClick}
-              className="map-canvas"
-              style={{ cursor: mode === 'draw' ? 'crosshair' : mode === 'click' ? 'pointer' : 'default' }}
-            />
+      <div className="dashboard-card">
+        <div className="dashboard-header">
+          <h1>Admin Dashboard</h1>
+          <div className="header-actions">
+            <span className="user-info">👤 {user}</span>
+            <button onClick={handleLogout} className="logout-btn">Logout</button>
           </div>
         </div>
 
-        {/* Block Form Section */}
-        <div className="block-form-section">
+        <div className="dashboard-content">
+          {/* Map Editor Section */}
+          <div className="map-editor-section">
+            <h2>Map Editor</h2>
+            
+            <div className="editor-toolbar" role="toolbar" aria-label="Map editor tools">
+              <button 
+                className={`editor-tool-btn ${mode === 'view' ? 'active' : ''}`}
+                onClick={() => setMode('view')}
+                type="button"
+                aria-pressed={mode === 'view'}
+              >
+                <MousePointer2 className="tool-icon" size={19} aria-hidden="true" />
+                <span>View</span>
+              </button>
+              <button 
+                className={`editor-tool-btn ${mode === 'click' ? 'active' : ''}`}
+                onClick={() => setMode('click')}
+                type="button"
+                aria-pressed={mode === 'click'}
+              >
+                <MapPin className="tool-icon" size={19} aria-hidden="true" />
+                <span>Click Point</span>
+              </button>
+              <button 
+                className={`editor-tool-btn ${mode === 'draw' ? 'active' : ''}`}
+                onClick={() => setMode('draw')}
+                type="button"
+                aria-pressed={mode === 'draw'}
+              >
+                <Square className="tool-icon" size={19} aria-hidden="true" />
+                <span>Draw Rectangle</span>
+              </button>
+              <button onClick={clearCanvas} className="editor-tool-btn" type="button">
+                <Trash2 className="tool-icon" size={19} aria-hidden="true" />
+                <span>Clear</span>
+              </button>
+            </div>
+
+            <div className="mode-indicator">
+              {mode === 'view' && 'View Mode - Just viewing the map'}
+              {mode === 'click' && 'Click Mode - Click anywhere to get coordinates'}
+              {mode === 'draw' && 'Draw Mode - Click and drag to draw a rectangle'}
+            </div>
+
+            <div className="canvas-wrapper">
+              <img 
+                id="map-img"
+                src="/public/map.jpeg" 
+                alt="Campus Map"
+                onLoad={handleImageLoad}
+                style={{ display: 'none' }}
+              />
+              <canvas
+                ref={canvasRef}
+                onMouseDown={handleCanvasMouseDown}
+                onMouseMove={handleCanvasMouseMove}
+                onMouseUp={handleCanvasMouseUp}
+                onClick={handleCanvasClick}
+                className="map-canvas"
+                style={{ cursor: mode === 'draw' ? 'crosshair' : mode === 'click' ? 'pointer' : 'default' }}
+              />
+            </div>
+          </div>
+
+          {/* Block Form Section */}
+          <div className="block-form-section">
           <h2>{selectedBlock ? 'Edit Block' : 'Add New Block'}</h2>
           
           <form onSubmit={handleSubmit} className="block-form">
@@ -528,25 +540,37 @@ function Dashboard() {
                 </div>
               ))}
               <button type="button" onClick={addSection} className="add-section-btn">
-                ➕ Add Section
+                <Plus className="form-btn-icon" size={18} aria-hidden="true" />
+                <span>Add Section</span>
               </button>
             </div>
 
             <div className="form-actions">
               <button type="submit" className="submit-btn">
-                {selectedBlock ? '💾 Update Block' : '➕ Create Block'}
+                {selectedBlock ? (
+                  <>
+                    <Save className="form-btn-icon" size={18} aria-hidden="true" />
+                    <span>Update Block</span>
+                  </>
+                ) : (
+                  <>
+                    <Plus className="form-btn-icon" size={18} aria-hidden="true" />
+                    <span>Create Block</span>
+                  </>
+                )}
               </button>
               {selectedBlock && (
                 <button type="button" onClick={resetForm} className="cancel-btn">
-                  ❌ Cancel
+                  <X className="form-btn-icon" size={18} aria-hidden="true" />
+                  <span>Cancel</span>
                 </button>
               )}
             </div>
           </form>
         </div>
 
-        {/* Blocks List Section */}
-        <div className="blocks-list-section">
+          {/* Blocks List Section */}
+          <div className="blocks-list-section">
           <h2>Existing Blocks ({blocks.length})</h2>
           <div className="blocks-grid">
             {blocks.map((block) => (
@@ -565,6 +589,7 @@ function Dashboard() {
                 </div>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </div>

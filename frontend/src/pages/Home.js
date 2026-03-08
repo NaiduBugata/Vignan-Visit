@@ -38,7 +38,7 @@ function Home() {
         onClick={() => navigate('/login')}
         title="Admin Login"
       >
-        🔐 Admin Login
+        Admin Login
       </button>
       <h1 className="title">Mahotsav 26 - Campus Map</h1>
       <div style={{ position: 'relative', display: 'inline-block' }}>

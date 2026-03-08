@@ -165,14 +165,8 @@ function VideoPlayer() {
               Your browser does not support the video tag.
             </video>
             {(videoType === 'gdrive' || videoType === 'onedrive') && (
-              <div style={{
-                marginTop: '15px',
-                padding: '15px',
-                background: '#e7f3ff',
-                borderRadius: '5px',
-                border: '1px solid #2196f3'
-              }}>
-                <p style={{ margin: '0', color: '#1565c0', fontSize: '14px' }}>
+              <div className="video-stream-note">
+                <p>
                   ℹ️ Video is being streamed from {videoType === 'gdrive' ? 'Google Drive' : 'OneDrive'} through your server.
                   {videoType === 'gdrive' && driveFileId && (
                     <span>
@@ -180,7 +174,7 @@ function VideoPlayer() {
                         href={`https://drive.google.com/file/d/${driveFileId}/view`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{ color: '#1565c0', textDecoration: 'underline' }}
+                        className="video-stream-link"
                       >
                         Open in Google Drive
                       </a>
