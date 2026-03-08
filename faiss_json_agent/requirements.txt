@@ -7,3 +7,6 @@ pyaudio
 deep-translator
 gTTS
 pygame
+flask
+flask-cors
+requests

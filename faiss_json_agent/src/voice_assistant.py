@@ -24,6 +24,7 @@ import pygame
 import io
 
 from .query_engine import QueryEngine
+from .hybrid_tts import HybridTTS
 
 # Supported languages with speech recognition codes
 LANGUAGES = {
@@ -73,6 +74,17 @@ class VoiceAssistant:
             pygame.mixer.init()
         except Exception:
             pass
+        # Initialize Hybrid TTS for better quality Indian language voices
+        # Note: AI4Bharat currently has connectivity issues, using enhanced gTTS with slow mode
+        try:
+            # Set use_indic_tts=False to use enhanced gTTS instead of AI4Bharat
+            # gTTS with slow=True provides clearer pronunciation for Telugu/Hindi/Tamil
+            self.hybrid_tts = HybridTTS(use_indic_tts=False)
+            print("✅ Hybrid TTS initialized with ENHANCED gTTS (slow/clear mode)")
+            print("   🎙️ Clear voices: Telugu, Hindi, Tamil, Kannada, Malayalam")
+        except Exception as e:
+            print(f"⚠️ Hybrid TTS initialization failed: {e}. Using traditional TTS.")
+            self.hybrid_tts = None
 
     def _init_tts(self) -> None:
         rate = self.tts.getProperty("rate")
@@ -127,7 +139,16 @@ class VoiceAssistant:
         else:
             print(f"Assistant: {text}")
         
-        # Use gTTS for non-English languages, pyttsx3 for English
+        # Try Hybrid TTS first (Indic-TTS for Indian languages, fallback to gTTS/pyttsx3)
+        if self.hybrid_tts:
+            try:
+                lang_code = LANGUAGES[self.language]["code"]
+                self.hybrid_tts.speak(display_text, lang=lang_code)
+                return
+            except Exception as e:
+                print(f"⚠️ Hybrid TTS failed: {e}. Falling back to traditional TTS.")
+        
+        # Fallback: Use gTTS for non-English languages, pyttsx3 for English
         if self.language != "english":
             try:
                 # Generate speech using Google TTS

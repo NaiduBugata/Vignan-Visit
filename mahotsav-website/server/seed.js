@@ -39,13 +39,22 @@ async function seedDatabase() {
 
     console.log('Connected to MongoDB');
 
-    // Clear existing data
-    await Block.deleteMany({});
-    console.log('Cleared existing blocks');
+    // Upsert sample data without deleting existing coordinates.
+    // This prevents map marker positions from being reset unexpectedly.
+    for (const block of blocks) {
+      const existing = await Block.findOne({ name: block.name }).lean();
+      const payload = existing
+        ? { ...block, coordinates: existing.coordinates || block.coordinates }
+        : block;
 
-    // Insert sample data
-    await Block.insertMany(blocks);
-    console.log('Sample data inserted successfully');
+      await Block.findOneAndUpdate(
+        { name: block.name },
+        payload,
+        { upsert: true, new: true, setDefaultsOnInsert: true }
+      );
+    }
+
+    console.log('Sample data upserted successfully (existing coordinates preserved)');
 
     mongoose.connection.close();
     console.log('Database connection closed');

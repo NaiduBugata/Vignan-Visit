@@ -6491,6 +6491,66 @@
       "category": "Alumni",
       "title": "Alumni Directory - Overview 2",
       "content": "Alumni Directory at Vignan University connects graduates with their alma mater and fellow alumni. The network helps current students through mentorship and job opportunities. Alumni working in top companies worldwide share their experiences. Annual alumni meets bring together graduates from different batches. Alumni contribute to university development through donations and volunteering. The Alumni Directory strengthens bonds and creates lifelong connections. Alumni are ambassadors of Vignan University globally."
+    },
+    {
+      "id": "doc_1082",
+      "category": "Laboratory Facilities",
+      "title": "Computer Science and Engineering Lab Overview",
+      "content": "The CSE Lab at Vignan University is equipped with state-of-the-art computing facilities. It features modern desktop computers with latest processors, high-speed internet connectivity, and specialized software for programming, data structures, algorithms, machine learning, and artificial intelligence. The lab provides hands-on experience in software development, web technologies, mobile app development, and cloud computing. Students have access to development tools like Visual Studio, Eclipse, PyCharm, and various programming languages including Python, Java, C++, and JavaScript. The lab is available for both regular classes and project work."
+    },
+    {
+      "id": "doc_1083",
+      "category": "Laboratory Facilities",
+      "title": "Computer Science Lab - Software and Tools",
+      "content": "CSE Lab at Vignan is equipped with industry-standard software and development tools. Students get practical experience with IDEs like Visual Studio Code, IntelliJ IDEA, and Android Studio. The lab has licenses for MATLAB, AutoCAD, and other specialized engineering software. High-performance workstations are available for resource-intensive tasks like deep learning, data analysis, and simulation. The lab supports projects in areas like IoT, blockchain, cybersecurity, and cloud computing. Faculty supervision ensures students learn best practices in coding and software engineering."
+    },
+    {
+      "id": "doc_1084",
+      "category": "Laboratory Facilities",
+      "title": "Physics Laboratory Facilities",
+      "content": "The Physics Lab at Vignan University provides comprehensive experimental facilities for undergraduate and postgraduate students. The lab is equipped with modern apparatus for mechanics, optics, electromagnetics, thermodynamics, and modern physics experiments. Students perform experiments related to Newton's laws, wave motion, interference, diffraction, photoelectric effect, and semiconductor physics. Advanced equipment includes oscilloscopes, spectrometers, laser systems, and digital measurement instruments. The lab follows safety protocols and provides proper equipment calibration. Experienced lab assistants and faculty guide students through complex experiments."
+    },
+    {
+      "id": "doc_1085",
+      "category": "Laboratory Facilities",
+      "title": "Physics Lab - Equipment and Experiments",
+      "content": "Physics Laboratory at Vignan features equipment for classical and modern physics experiments. Students work with equipment like traveling microscopes, sonometers, potentiometers, and optical benches. The lab has facilities for studying quantum mechanics principles through experiments on photoelectric effect, Compton scattering, and Frank-Hertz experiment. Digital storage oscilloscopes, function generators, and power supplies enable electronics experiments. The lab maintains detailed manuals and safety equipment including fire extinguishers and first aid kits. Regular maintenance ensures all equipment functions properly."
+    },
+    {
+      "id": "doc_1086",
+      "category": "Laboratory Facilities",
+      "title": "Chemistry Laboratory Overview",
+      "content": "The Chemistry Lab at Vignan University is a well-equipped facility for conducting experiments in organic, inorganic, physical, and analytical chemistry. The lab features fume hoods, distillation units, ph meters, burettes, pipettes, and various glassware. Students learn synthesis techniques, titration methods, qualitative and quantitative analysis, and spectroscopy. Safety is paramount with proper ventilation systems, emergency showers, eyewash stations, and personal protective equipment. The lab provides chemicals and reagents of high purity for accurate experimental results. Faculty members supervise all experiments to ensure safety and learning outcomes."
+    },
+    {
+      "id": "doc_1087",
+      "category": "Laboratory Facilities",
+      "title": "Chemistry Lab - Equipment and Safety",
+      "content": "Chemistry Laboratory at Vignan maintains high safety standards with proper storage of chemicals, segregation of incompatible substances, and clear labeling. The lab has analytical instruments including UV-Vis spectrophotometer, colorimeter, conductivity meter, and flame photometer. Students perform experiments on chemical kinetics, thermochemistry, electrochemistry, and coordination chemistry. Proper waste disposal procedures are followed for hazardous chemicals. Lab technicians ensure all equipment is calibrated and maintained. The lab supports research projects and provides training in analytical techniques used in industries."
+    },
+    {
+      "id": "doc_1088",
+      "category": "Classroom Facilities",
+      "title": "Smart Classrooms at Vignan University",
+      "content": "Vignan University classrooms are equipped with modern teaching aids including projectors, smart boards, and audio systems. Each classroom has comfortable seating arrangements with proper ventilation and lighting. Smart boards enable interactive teaching with digital content, video demonstrations, and live problem-solving. Classrooms are spacious and designed to accommodate 60-80 students comfortably. High-speed Wi-Fi connectivity is available in all classrooms for online learning resources. The furniture is ergonomically designed for student comfort during long lectures."
+    },
+    {
+      "id": "doc_1089",
+      "category": "Classroom Facilities",
+      "title": "Classroom Infrastructure and Technology",
+      "content": "Classrooms at Vignan feature centralized air conditioning, proper acoustics, and multimedia facilities. Each room has backup power supply to ensure uninterrupted classes. Digital screens display course schedules and announcements. Classrooms are equipped with recording systems for creating educational content. The seating is tiered in larger lecture halls for better visibility. Whiteboards and markers are provided alongside digital displays. Regular maintenance ensures cleanliness and functional equipment. Faculty can connect their laptops for presentations through HDMI and wireless connectivity."
+    },
+    {
+      "id": "doc_1090",
+      "category": "Laboratory Facilities",
+      "title": "Laboratory Access and Timings",
+      "content": "All laboratories at Vignan University are accessible to students during designated hours. CSE labs operate from 9 AM to 6 PM on weekdays with extended hours for project work. Physics and Chemistry labs have scheduled practical sessions as per the timetable. Students can book lab time for their projects through the online portal. Lab staff provide assistance and ensure safety compliance. Weekend access is available with prior permission from faculty coordinators. All labs maintain attendance records and equipment usage logs for accountability."
+    },
+    {
+      "id": "doc_1091",
+      "category": "Laboratory Facilities",
+      "title": "Laboratory Rules and Guidelines",
+      "content": "Students must follow laboratory rules including wearing appropriate attire, using safety equipment, and handling apparatus carefully. Food and beverages are prohibited inside labs. Students must clean their workstations after experiments and report any equipment damage immediately. Lab manuals must be brought to each session. Advance booking is required for specific equipment. Violation of safety rules may result in restricted lab access. Faculty supervision is mandatory for certain experiments involving hazardous materials or expensive equipment."
     }
   ],
   "metadata": {
